@@ -18,7 +18,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://nexo-rand-frontend.vercel.app", // Replace with the frontend's URL (React app)
+    origin: "*", // Replace with the frontend's URL (React app)
     methods: "GET,POST,PUT,DELETE,PATCH", // Allowed methods
     credentials: true, // Allow cookies to be sent with requests
   })
