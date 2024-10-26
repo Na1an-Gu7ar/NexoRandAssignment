@@ -9,7 +9,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try { 
-        const response = await fetch("https://nexo-rand-backend.vercel.app/api/user/v1/get-users", {
+        const response = await fetch("http://localhost:7000/api/user/v1/get-users", {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`, // Use token if API is protected
           },
@@ -37,7 +37,7 @@ const Leaderboard = () => {
     setSelectedFriend(userId);
 
     try {
-      const response = await fetch("https://nexo-rand-backend.vercel.app/api/user/v1/your-history", {
+      const response = await fetch("http://localhost:7000/api/user/v1/your-history", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
