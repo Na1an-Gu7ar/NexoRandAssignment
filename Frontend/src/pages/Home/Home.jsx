@@ -9,7 +9,7 @@ const Home = () => {
   // Fetch all users (friends) from backend
   const fetchFriends = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/v1/get-users`, {
+      const response = await fetch("https://nexo-rand-backend.vercel.app/api/user/v1/get-users", {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`, // Pass token if required for protected routes
         },
@@ -39,7 +39,7 @@ const Home = () => {
   const claimPoints = async (username, firstName) => {
     try {
       // Make PATCH request to increment points
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/v1/claim-points`, {
+      const response = await fetch("https://nexo-rand-backend.vercel.app/api/user/v1/claim-points", {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

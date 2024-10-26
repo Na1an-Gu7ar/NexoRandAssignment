@@ -20,7 +20,7 @@ const Registration = () => {
     console.log(formData);
     try {
       // Make an API call to register the user
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/v1/register`, formData);
+      const response = await axios.post("https://nexo-rand-backend.vercel.app/api/auth/v1/register", formData);
 
       // Check if registration is successful
       if (response.data.success) {

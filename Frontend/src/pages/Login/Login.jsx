@@ -18,7 +18,7 @@ const Login = () => {
       
       try {
         // Make an API call to the backend login route
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/v1/login`, {
+        const response = await fetch("https://nexo-rand-backend.vercel.app/api/auth/v1/login", {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
