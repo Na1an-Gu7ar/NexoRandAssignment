@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const Home = () => {
   const [friends, setFriends] = useState([]);
@@ -12,7 +9,7 @@ const Home = () => {
   // Fetch all users (friends) from backend
   const fetchFriends = async () => {
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/api/user/v1/get-users`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/v1/get-users`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`, // Pass token if required for protected routes
         },
@@ -42,7 +39,7 @@ const Home = () => {
   const claimPoints = async (username, firstName) => {
     try {
       // Make PATCH request to increment points
-      const response = await fetch(`${process.env.BACKEND_URL}/api/user/v1/claim-points`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/v1/claim-points`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
