@@ -1,5 +1,5 @@
 import express from "express";
-import { connectDb } from "./config/dbConenction.js";
+import { connectDb } from "./src/config/dbConenction.js";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -7,8 +7,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // *********** All-Routes *************
-import auth from "./routes/auth.routes.js";
-import user from "./routes/user.routes.js";
+import auth from "./src/routes/auth.routes.js";
+import user from "./src/routes/user.routes.js";
 // *********** All-Routes *************
 
 import cookieParser from "cookie-parser";
